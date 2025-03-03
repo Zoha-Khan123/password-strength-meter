@@ -38,10 +38,14 @@ def check_password_strength(password):
     else:
        st.write("❌ Weak Password - Improve it using the suggestions above.")
 
+# Header
+st.title("Password Strength Checker 🔒")
+st.write("Check the strength of your password and get suggestions to make it stronger.")
+
 # Generate Random Password
 option = ["Pq7$kL@3","X9yT$2Lm","A1@kFp%3","Z2fL@p7T","mL9$Xq1K"]
 choose = math.floor(random.random()*len(option))
-random = option[choose]
+random_password = option[choose]
 
 # Input field for password
 password = st.text_input("Enter your password:",type="password")
@@ -51,7 +55,9 @@ if st.button("Check Password Strength"):
     if password:
         check_password_strength(password)
     else:
-        st.write("💡 Enter a Password? Suggest this one:", random)
+        st.write("---")
+        st.write("💡 Need a strong password? Try this one:")
+        st.success(random_password)
 
 
 
